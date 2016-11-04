@@ -1,0 +1,121 @@
+@mixin full-section($background,$color,$height) {
+  background: $color url($background);
+  height: $height;
+}
+
+@mixin circle ($radius,$border-color){
+  width:$radius;
+  height: $radius;
+  border-radius: 50%;
+  border:1px solid $border-color;
+}
+
+.fixed-logo{
+  position: absolute;
+  top:0;
+  left:20px;
+  img{
+    wodth:120px;
+  }
+}
+
+
+.full-attached-back{
+  display: block;
+ @include full-section("../images/water.jpg",white,auto);
+
+  background-size: 100% 66vh;
+  background-position-y: 280px;
+  background-repeat: no-repeat;
+  text-align: center;
+  .logo {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    img{
+      margin: 50px auto;
+    }
+  }
+  .go-down{
+    font-size: 30px;
+    color: #000000;
+    padding: 5px 10px;
+    font-weight: 600;
+  }
+  .know-more{
+    font-size: 16px;
+    color:black;
+
+  }
+}
+.section-two{
+  @include full-section(null,white,100vh);
+  background-size: 100% 66vh;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid #d1d1d1;
+  border-top: 1px solid #d1d1d1;
+  box-shadow: 0 0 20px #d1d1d1;
+  .circle{
+    @include circle(300px, #bebebe);
+    text-align: center;
+    overflow-wrap: normal;
+    display: block;
+    margin: 20px auto;
+    background: whitesmoke;
+    box-shadow: 0 0 12px #989898;
+
+    i{
+      font-size: 72px;
+      color: #bebebe;
+      padding-top: 44px;
+    }
+    &:hover {
+      .step{
+        color:gray;
+        .step-one{
+          color: black;
+        }
+      }
+
+    }
+    &.step3{
+      &:hover i{
+        color:deepskyblue;
+      }
+    }
+    &.step1{
+      &:hover i{
+        color: #46ff53;
+      }
+    }
+    &.step2{
+      &:hover i{
+        color: #ffaa3c;
+      }
+    }
+    .step{
+      font-size: 18px;
+      color: #989898;
+      .step-one{
+        font-size: 32px;
+        font-weight: 600;
+        color: #989898;
+      }
+    }
+  }
+}
+.home-title{
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 0 8px #000000, 1px 1px 10px black, 2px 2px 10px gray;
+}
+.automate-button{
+  display: inline-block;
+  margin: 10px auto;
+  padding: 18px;
+  font-size: 20px;
+  background: #155f0d;
+  color: white;
+  border-radius: 4px;
+  border: 1px solid #155f0d;
+}
